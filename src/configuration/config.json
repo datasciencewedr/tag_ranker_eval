@@ -1,0 +1,65 @@
+{ "experiment_name":"Ranker",
+  "data": {
+    "raw_data_path": "C:/Users/LéaLESBATS/Documents/BP2S/pipeline_model_eval/data/raw/mock_data.csv",
+    "target_column": "priority"
+  },
+  "metrics": {
+    "common":  [
+      "sklearn.metrics.mean_squared_error",
+      "sklearn.metrics.mean_absolute_error",
+      "sklearn.metrics.r2_score",
+      "sklearn.metrics.ndcg_score"
+    ],
+    "model_specific": {}
+  },
+  "models": [
+    {
+      "name": "random_forest",
+      "class": "sklearn.ensemble.RandomForestRegressor",
+      "params": {
+        "random_state": 42
+      }
+    },
+    {
+      "name": "gradient_boosting",
+      "class": "sklearn.ensemble.GradientBoostingRegressor",
+      "params": {
+        "random_state": 42
+      }
+    },
+    {
+      "name": "xgboost",
+      "class": "xgboost.XGBRegressor",
+      "params": {
+        "random_state": 42
+      }
+    },
+    {
+      "name": "lightgbm",
+      "class": "lightgbm.LGBMRegressor",
+      "params": {
+        "random_state": 42
+      }
+    },
+    {
+      "name": "svm",
+      "class": "sklearn.svm.SVR",     
+      "params": {
+        "C": 1.0,
+        "epsilon": 0.1
+      }
+    },
+    {
+      "name": "decision_tree",
+      "class": "sklearn.tree.DecisionTreeRegressor",
+      "params": {
+        "random_state": 42
+      }
+    },
+    {
+      "name": "linear_regression",
+      "class": "sklearn.linear_model.LinearRegression",
+      "params": {}
+    }
+  ]
+}
